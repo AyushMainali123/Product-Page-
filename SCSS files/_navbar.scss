@@ -1,0 +1,109 @@
+header{
+    nav{
+        position: fixed;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 10vh;
+        background-color: var(--navbar-background);
+        z-index: 3;
+        .logo{
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 20px;
+        }
+        ul{
+            display: flex;
+            width: 30%;
+            justify-content: space-around;
+            list-style: none;
+            letter-spacing: 2px;
+        }
+        .burger{
+            display: none;
+            div{
+                width: 25px;
+                height: 2px;
+                background-color: white;
+                transition: 400ms;
+            }  
+        }
+        
+         
+    }
+}
+
+
+
+@media (max-width: 650px){
+
+    header{
+        nav{
+            &.active{
+                ul{
+                    transform: translateX(0);
+                }
+                .burger{
+
+                   
+                    .line{
+                        position: absolute;
+                        top: 50%;
+                        left: 20%;
+                    }
+                    .line-1{
+                        transform: rotate(45deg);
+                    }
+                    .line-2{
+                        opacity: 0;
+                    }
+                    .line-3{
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+            ul{
+                position: absolute;
+                right: 0px;
+                height: 90vh;
+                top: 10vh;
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+                background-color: var(--navbar-background);
+                align-items: center;
+                transform: translateX(100%);
+                transition: 400ms;
+
+            }
+            .burger{
+                // background-color: pink;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                position: relative;
+                cursor: pointer;
+                width: 40px;
+                height: 30px;
+            }
+        }
+        
+    }   
+
+}
+
+
+
+@media (max-width: 1024px){
+    header{
+        nav{
+            ul{
+                width: 55%;
+            }
+
+        }
+    }
+}
